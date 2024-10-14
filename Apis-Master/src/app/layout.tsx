@@ -53,8 +53,8 @@ export default function RootLayout({
           name="google-adsense-account"
           content={process.env.NEXT_PUBLIC_ADS_GOOGLE}
         />
+    
       </Head>
-      
       <body className={inter.className}>
         <Header />
         <main className="flex flex-col h-[100vh] relative">
