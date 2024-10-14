@@ -33,6 +33,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "default-google-verification",
+  },
+  // Adding the google-adsense-account meta tag
+  other: {
+    "google-adsense-account": process.env.NEXT_PUBLIC_ADS_GOOGLE || "default-ads-google-account",
+  }
 };
 
 export default function RootLayout({
@@ -42,19 +49,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="google-site-verification"
-          content={process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION}
-        />
-        <meta
-          name="google-adsense-account"
-          content={process.env.NEXT_PUBLIC_ADS_GOOGLE}
-        />
-    
-      </Head>
       <body className={inter.className}>
         <Header />
         <main className="flex flex-col h-[100vh] relative">
